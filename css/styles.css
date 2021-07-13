@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +11,7 @@
 body{
     color: white;
     background-color:#161111;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 
@@ -45,7 +48,7 @@ nav{
 
 nav > a{
     color: whitesmoke;
-    font-weight: 300;
+    font-size: 20px;
     text-decoration: none;
     margin-right: 10px;
 }
@@ -96,10 +99,7 @@ header .textos-header{
 .imagen-about-us{
     width: 48%;
 }
-.imagen-about-us-2{
-    width: 30%;
-    border-radius: 50%;
-}
+
 
 .sobre-nosotros .contenido-textos{
     width: 48%;
@@ -140,6 +140,44 @@ header .textos-header{
     flex-wrap: wrap;
 }
 
+.container-img{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    background: #8f292933;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .4s ease-in;
+}
+.move{
+    transform: translateX(0);
+}
+
+.img-show{
+    height: 80%;
+    transform: scale(0);
+    display: block;
+    object-fit: cover;
+    transition: transform .2s .4s;
+}
+
+.show{
+    transform: scale(1);
+
+}
+
+.bi.bi-x-lg{
+    position: absolute;
+    color: #fff;
+    top: 25px;
+    left: 25px;
+    font-size: 10px;
+    cursor: pointer;
+}
 .imagen-port{
     width: 24%;
     margin-bottom: 10px;
@@ -157,13 +195,14 @@ header .textos-header{
     display: block;
 }
 
+
 .hover-galeria{
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
-    transform: scale(0);
-    background: hsla(27, 72%, 46%, 0.808);
+    transform: scale(1);
+    background: hsla(27, 72%, 46%, 0.301);
     transition: transform .5s;
     display: flex;
     justify-content: center;
@@ -180,7 +219,7 @@ header .textos-header{
 }
 
 .imagen-port:hover .hover-galeria{
-     transform:scale(1)
+     transform:scale(0)
 }
 
 /* clients */
@@ -291,6 +330,109 @@ footer{
     color:rgb(31, 30, 30)
 }
 
+/*PORTAFOLIO-->inicio*/
+
+.galeria-porta{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.contiene-imgporta{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background: #8f292959;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .4s ease-in;
+}
+.move{
+    transform: translateX(0);
+}
+
+.img-show{
+    height: 80%;
+    transform: scale(0);
+    display: block;
+    object-fit: cover;
+    transition: transform .2s .4s;
+}
+
+.show{
+    transform: scale(1);
+
+}
+
+.bi.bi-x-lg-1{
+    position: absolute;
+    color: #fff;
+    top: 25px;
+    right: 25px;
+    font-size: 10px;
+    cursor: pointer;
+}
+.imagen-ga{
+    width: 24%;
+    margin-bottom: 10px;
+    height: 450px;
+    overflow:hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagen-ga > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/*PORTAFOLIO--> final*/
+
+/*ACERCA DE -->inicio*/
+
+.contenedor-sobre-nosotros2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.imagen-about-us-2{
+    width: 30%;
+    border:blanchedalmond;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.952);
+}
+
+.contenedor-sobre-nosotros2 .contenido-textos-2{
+    width: 48%;
+    margin-left: 100px;
+}
+
+.contenedor-sobre-nosotros2 p{
+    padding:  30px 15px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+
+.redes-sociales{
+    align-items: center;
+    text-align: center;
+    margin: 25px;
+}
+.redes-sociales a{
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+}
+
 
 @media screen and (max-width: 900px){
     header{
@@ -303,20 +445,41 @@ footer{
         justify-content: center;
         align-items: center;
     }
+    .contenedor-sobre-nosotros2{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .contenedor-sobre-nosotros .contenido-textos{
+        width: 90%;
+    }
+    .contenedor-sobre-nosotros2 .contenido-textos-2{
+        width: 90%;
+        margin: 0 0 0 0;
+    }
+    .img-show{
         width: 90%;
     }
 
     .imagen-port{
         width: 44%;
+        height: 350px;
         margin-bottom: 10px;
-        height: 200px;
         overflow:hidden;
         position: relative;
         cursor: pointer;
         box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
     }
     
+    .imagen-ga{
+        width: 44%;
+        height: 350px;
+        margin-bottom: 10px;
+        overflow:hidden;
+        position: relative;
+        cursor: pointer;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    }
     .cards{
         flex-direction: column;
         justify-content: center;
@@ -377,16 +540,31 @@ footer{
     .sobre-nosotros .contenido-textos{
         width: 95%;
     }
-
-    .imagen-port{
-        width: 95%;
+    .contenedor-sobre-nosotros2 .contenido-textos-2{
+        width: 90%;
+        margin-top: 30px;
     }
 
+    .imagen-port{
+        width: 85%;
+        height: 5%;
+    }
+
+    .imagen-ga{
+        width: 85%;
+        height: 5%;
+    }
+    .img-show{
+        width: 90%;
+        height: 75%;
+        object-fit: cover;
+    }
     .cards .card{
-        height: 450px;
+        height: 400px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        
     }
 
     .cards .card img {
